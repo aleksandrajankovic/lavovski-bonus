@@ -127,35 +127,51 @@
           opacity: 0.55;
         }
         .bonus {
-            height: 100px !important;
+          height: 100px !important;
         }
         .bonus-2 {
-            height: 70px !important;
+          height: 70px !important;
         }
         .cta {
-            height: 60px !important;
+          height: 60px !important;
         }
         .steps span {
-            font-size: 12px !important;
+          font-size: 12px !important;
         }
       }
     </style>
   </head>
   <body
-    class="pb-[40px] bg-gradient-to-b from-[#23340a] via-[#23340a] to-[#020200] text-white overflow-x-hidden"
+    class="bg-gradient-to-b from-[#23340a] via-[#23340a] to-[#020200] text-white overflow-x-hidden"
   >
     <section
       class="hero flex flex-col justify-between h-screen pt-8 pb-6 px-4 overflow-hidden"
     >
       <div class="flex flex-col justify-center gap-2">
-        <img class="h-10 md:h-12 lg:h-14 xl:h-16 w-auto object-contain" src="./images/meridianbet_logo_new_.png" alt="Meridin Logo" />
+        <img
+          class="h-10 md:h-12 lg:h-14 xl:h-16 w-auto object-contain"
+          src="./images/meridianbet_logo_new_.png"
+          alt="Meridin Logo"
+        />
 
-        <img class="h-[130px] w-auto object-contain bonus" src="./images/txt01.png" alt="Bonus" />
+        <img
+          class="h-[130px] w-auto object-contain bonus"
+          src="./images/txt01.png"
+          alt="Bonus"
+        />
       </div>
       <div class="flex flex-col gap-2 items-center">
-        <img class="h-[90px] w-auto object-contain bonus-2" src="./images/txt04.png" alt="Lavovski Bonus" />
+        <img
+          class="h-[90px] w-auto object-contain bonus-2"
+          src="./images/txt04.png"
+          alt="Lavovski Bonus"
+        />
         <a href="#" class="hover:scale-105">
-          <img class="h-[74px] w-auto object-contain cta" src="./images/button_main.png" alt="CTA" />
+          <img
+            class="h-[74px] w-auto object-contain cta"
+            src="./images/button_main.png"
+            alt="CTA"
+          />
         </a>
       </div>
     </section>
@@ -261,7 +277,7 @@
         </div>
       </div>
 
-      <div class="text-center py-4" style="margin-bottom: 75px">
+      <div class="text-center py-4" style="margin-bottom: 55px">
         <p class="text-white text-sm mb-2">
           Bez uslova, bez čekanja, samo igra, zabava<br />
           i tvoj start uz Meridian!
@@ -331,7 +347,9 @@
               class="bg-[#7b0b65] rounded-3xl p-6 relative overflow-hidden shadow-2xl"
             >
               <div class="relative z-10">
-                <h3 class="text-[#ffb6fa] font-black text-2xl mb-3 tracking-wide">
+                <h3
+                  class="text-[#ffb6fa] font-black text-2xl mb-3 tracking-wide"
+                >
                   KAZINO TURNIRI
                 </h3>
                 <p class="text-white text-xs mb-4 leading-relaxed max-w-[34ch]">
@@ -377,7 +395,9 @@
                 </div>
 
                 <div class="flex flex-col items-end relative text-right">
-                  <h3 class="text-[#a1fdff] font-black text-2xl mb-2 tracking-wide">
+                  <h3
+                    class="text-[#a1fdff] font-black text-2xl mb-2 tracking-wide"
+                  >
                     MERIDIAN MISIJE
                   </h3>
                   <p
@@ -400,7 +420,15 @@
           </div>
         </div>
       </div>
+      <footer>
+        <p class="text-[12px] text-[#ededed] mt-[75px] text-center">
+          ©2026 Meridian Tech D.O.O. Sva prava zadržana. Meridianbet je sportska
+          kladionica u vlasništvu Meridian Tech D.O.O. koji je u Agenciji za
+          Privredne Registre u Srbiji zaveden pod brojem 08724636.
+        </p>
+      </footer>
     </div>
+
     <script>
       (function () {
         const stage = document.getElementById("lionCarousel");
@@ -432,7 +460,6 @@
             }
           });
 
-      
           [prev, active, next].forEach((i) => {
             cards[i].style.opacity = "";
             cards[i].style.pointerEvents = "";
