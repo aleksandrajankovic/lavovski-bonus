@@ -1,0 +1,493 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lavovski Bonus - Meridian</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .gold-gradient {
+        background: linear-gradient(
+          180deg,
+          #ffe17b 0%,
+          #d4af37 50%,
+          #8b6914 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.8));
+      }
+
+      .gold-gradient-large {
+        background: linear-gradient(
+          180deg,
+          #ffe17b 0%,
+          #d4af37 50%,
+          #8b6914 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-shadow: 0 8px 16px rgba(0, 0, 0, 0.8);
+        filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.9));
+      }
+
+      .gold-gradient-text {
+        background: linear-gradient(
+          180deg,
+          #ffe17b 0%,
+          #d4af37 50%,
+          #8b6914 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+      .hero {
+        background: url("./images/main_img.png");
+        background-size: cover;
+        background-position: center;
+      }
+      /* === Vertical Infinite Swiper (3 visible) === */
+      .vc-stage {
+        position: relative;
+
+        /* centriramo ali ostavimo više prostora gore */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        /* KLJUČ: prostor gore/dole da prev/next imaju gde da vire */
+        padding-top: 140px;
+        padding-bottom: 140px;
+
+        touch-action: pan-y;
+        user-select: none;
+      }
+
+      .vc-slot {
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        width: min(560px, 92vw);
+        transition:
+          transform 380ms ease,
+          opacity 380ms ease,
+          filter 380ms ease;
+        will-change: transform;
+      }
+
+      /* active pomerimo malko naniže da se prev vidi */
+      .vc-active {
+        transform: translateY(26px) scale(1);
+        opacity: 1;
+        filter: none;
+        z-index: 30;
+        pointer-events: auto;
+      }
+
+      /* prev sad stvarno ulazi u kadar (manji translate) */
+      .vc-prev {
+        transform: translateY(-20%) scale(0.96);
+        opacity: 0.55;
+        filter: blur(0.6px) brightness(0.9);
+        z-index: 20;
+        pointer-events: none;
+      }
+
+      /* next isto tako (simetrično) */
+      .vc-next {
+        transform: translateY(46%) scale(0.92);
+        opacity: 0.55;
+        filter: blur(0.6px) brightness(0.9);
+        z-index: 10;
+        pointer-events: none;
+      }
+
+      /* mali ekran */
+      @media (max-width: 390px) {
+        .vc-stage {
+          padding-top: 120px;
+          padding-bottom: 120px;
+        }
+
+        .vc-active {
+          transform: translateY(26px) scale(1);
+        }
+
+        .vc-prev {
+          transform: translateY(-20%) scale(0.96);
+          opacity: 0.55;
+        }
+        .vc-next {
+          transform: translateY(34%) scale(0.96);
+          opacity: 0.55;
+        }
+        .bonus {
+            height: 100px !important;
+        }
+        .bonus-2 {
+            height: 70px !important;
+        }
+        .cta {
+            height: 60px !important;
+        }
+      }
+    </style>
+  </head>
+  <body
+    class="pb-[40px] bg-gradient-to-b from-gray-900 via-black to-black text-white overflow-x-hidden"
+  >
+    <section
+      class="hero flex flex-col justify-between h-screen pt-8 pb-6 px-4 overflow-hidden"
+    >
+      <div class="flex flex-col justify-center gap-2">
+        <img class="h-10 md:h-12 lg:h-14 xl:h-16 w-auto object-contain" src="./images/meridianbet_logo_new_.png" alt="Meridin Logo" />
+
+        <img class="h-[150px] w-auto object-contain bonus" src="./images/txt01.png" alt="Bonus" />
+      </div>
+      <div class="flex flex-col gap-2 items-center">
+        <img class="h-[100px] w-auto object-contain bonus-2" src="./images/txt04.png" alt="Lavovski Bonus" />
+        <a href="#" class="hover:scale-105">
+          <img class="h-[90px] w-auto object-contain cta" src="./images/button_main.png" alt="CTA" />
+        </a>
+      </div>
+    </section>
+
+    <div class="px-4 py-6 space-y-4">
+      <!-- WRAPPER -->
+      <div class="space-y-4">
+        <!-- ROW 01 -->
+        <div class="flex items-stretch gap-3">
+          <!-- LEFT TAG -->
+          <div
+            class="min-w-[110px] px-6 py-5 flex items-center justify-center text-white font-black text-5xl bg-[#c69936] shadow-[0_12px_30px_rgba(0,0,0,0.25)]"
+            style="
+              clip-path: polygon(
+                0% 0%,
+                84% 0%,
+                100% 50%,
+                84% 100%,
+                0% 100%,
+                0% 50%
+              );
+              border-radius: 18px;
+            "
+          >
+            01
+          </div>
+
+          <!-- RIGHT BOX -->
+          <div
+            class="flex-1 rounded-2xl bg-[#c69936] px-6 py-5 shadow-[0_12px_30px_rgba(0,0,0,0.22)]"
+          >
+            <p class="text-white leading-snug">
+              <span class="text-[14px] font-medium">1.000 RSD poklon tiket</span
+              ><br />
+              <span class="text-[18px] font-extrabold"
+                >+ 2.000 RSD kazino bonus</span
+              >
+            </p>
+          </div>
+        </div>
+
+        <!-- ROW 02 -->
+        <div class="flex items-stretch gap-3">
+          <div
+            class="min-w-[110px] px-6 py-5 flex items-center justify-center text-white font-black text-5xl bg-[#7e870b] shadow-[0_12px_30px_rgba(0,0,0,0.25)]"
+            style="
+              clip-path: polygon(
+                0% 0%,
+                84% 0%,
+                100% 50%,
+                84% 100%,
+                0% 100%,
+                0% 50%
+              );
+              border-radius: 18px;
+            "
+          >
+            02
+          </div>
+
+          <div
+            class="flex-1 rounded-2xl bg-[#7e870b] px-6 py-5 shadow-[0_12px_30px_rgba(0,0,0,0.22)]"
+          >
+            <p class="text-white leading-snug">
+              <span class="text-[14px] font-medium">1.000 RSD poklon tiket</span
+              ><br />
+              <span class="text-[18px] font-extrabold"
+                >+ 2.000 RSD kazino bonus</span
+              >
+            </p>
+          </div>
+        </div>
+
+        <!-- ROW 03 -->
+        <div class="flex items-stretch gap-3">
+          <div
+            class="min-w-[110px] px-6 py-5 flex items-center justify-center text-white font-black text-5xl bg-[#365800] shadow-[0_12px_30px_rgba(0,0,0,0.25)]"
+            style="
+              clip-path: polygon(
+                0% 0%,
+                84% 0%,
+                100% 50%,
+                84% 100%,
+                0% 100%,
+                0% 50%
+              );
+              border-radius: 18px;
+            "
+          >
+            03
+          </div>
+
+          <div
+            class="flex-1 rounded-2xl bg-[#365800] px-6 py-5 shadow-[0_12px_30px_rgba(0,0,0,0.22)]"
+          >
+            <p class="text-white leading-snug font-extrabold">
+              <span class="text-[14px] font-semibold"
+                >Uplati prvi depozit i uzmi 200%</span
+              ><br />
+              <span class="text-[18px]">kazino bonusa - do 20.000 RSD!</span>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center py-4" style="margin-bottom: 75px">
+        <p class="text-white text-sm mb-2">
+          Bez uslova, bez čekanja, samo igra, zabava<br />
+          i tvoj start uz Meridian!
+        </p>
+        <button
+          class="flex items-center justify-center gap-2 text-white text-sm mx-auto hover:text-yellow-400 transition-colors"
+        >
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+            <path
+              fill-rule="evenodd"
+              d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+              clip-rule="evenodd"
+            />
+          </svg>
+          Pravila promocije
+        </button>
+      </div>
+
+      <div id="lionCarousel" class="vc-stage my-2">
+        <div id="lionSlots" class="absolute inset-0">
+          <!-- CARD 1 -->
+          <div data-card class="vc-slot">
+            <div
+              class="bg-[#d6191f] rounded-3xl p-6 relative overflow-hidden shadow-2xl"
+            >
+              <div class="flex justify-end gap-4">
+                <div
+                  class="pointer-events-none absolute -bottom-4 -left-4 opacity-[0.8]"
+                >
+                  <img
+                    class="h-[200px] opacity-[0.9]"
+                    src="./images/mascot_early_payout.png"
+                    alt=""
+                  />
+                </div>
+
+                <div class="flex flex-col items-end relative text-right">
+                  <h3
+                    class="text-[#ffcb05] font-black text-2xl mb-2 tracking-wide"
+                  >
+                    EARLY PAYOUT
+                  </h3>
+
+                  <p
+                    class="text-white text-xs mb-4 leading-relaxed max-w-[30ch]"
+                  >
+                    Pobeda ne mora da čeka kraj,<br />
+                    Uz Meridian® Early Payout, dobitak<br />
+                    stize čim tvoj tim napravi razliku. I<br />
+                    slavlje može da počne odmah.
+                  </p>
+
+                  <button
+                    class="bg-yellow-400 text-black font-black text-sm py-2 px-6 rounded-full hover:bg-yellow-300 transition-colors"
+                    type="button"
+                  >
+                    ODIGRAJ TIKET
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CARD 2 -->
+          <div data-card class="vc-slot">
+            <div
+              class="bg-[#7b0b65] rounded-3xl p-6 relative overflow-hidden shadow-2xl"
+            >
+              <div class="relative z-10">
+                <h3 class="text-[#ffb6fa] font-black text-2xl mb-3 tracking-wide">
+                  KAZINO TURNIRI
+                </h3>
+                <p class="text-white text-xs mb-4 leading-relaxed max-w-[34ch]">
+                  Uđi u Premium kazino turnire i igraj za<br />
+                  vrh. Veći ulozi, jača konkurencija i vr-<br />
+                  hunske nagrade čekaju samo najspreм-<br />
+                  nije.
+                </p>
+                <button
+                  class="bg-yellow-400 text-black font-black text-sm py-2 px-6 rounded-full hover:bg-yellow-300 transition-colors"
+                  type="button"
+                >
+                  PRIKLJUČI SE
+                </button>
+              </div>
+
+              <div
+                class="pointer-events-none absolute -bottom-4 -right-4 opacity-[0.8]"
+              >
+                <img
+                  class="h-[200px] opacity-[0.9]"
+                  src="./images/mascot_casino.png"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- CARD 3 -->
+          <div data-card class="vc-slot">
+            <div
+              class="bg-[#174faa] rounded-3xl p-6 relative overflow-hidden shadow-2xl"
+            >
+              <div class="flex justify-end gap-4">
+                <div
+                  class="pointer-events-none absolute -bottom-4 -left-4 opacity-[0.8]"
+                >
+                  <img
+                    class="h-[200px]"
+                    src="./images/mascot_missions.png"
+                    alt=""
+                  />
+                </div>
+
+                <div class="flex flex-col items-end relative text-right">
+                  <h3 class="text-[#a1fdff] font-black text-2xl mb-2 tracking-wide">
+                    MERIDIAN MISIJE
+                  </h3>
+                  <p
+                    class="text-white text-xs mb-4 leading-relaxed max-w-[34ch]"
+                  >
+                    Kazino ili sport, izbor je tvoj, igraj kao<br />
+                    luvek, a oseti se automatski<br />
+                    skupljaju. Svaki ulog te vodi korak<br />
+                    bliže nagradama koje te čekaju.
+                  </p>
+                  <button
+                    class="bg-yellow-400 text-black font-black text-sm py-2 px-6 rounded-full hover:bg-yellow-300 transition-colors"
+                    type="button"
+                  >
+                    POKRENI MISIJU
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      (function () {
+        const stage = document.getElementById("lionCarousel");
+        const root = document.getElementById("lionSlots");
+        const cards = Array.from(root.querySelectorAll("[data-card]"));
+
+        if (!stage || !root || cards.length < 3) return;
+
+        let active = 0;
+        let locked = false;
+
+        const mod = (i, n) => ((i % n) + n) % n;
+
+        function applyClasses() {
+          const n = cards.length;
+          const prev = mod(active - 1, n);
+          const next = mod(active + 1, n);
+
+          cards.forEach((c, i) => {
+            c.classList.remove("vc-prev", "vc-active", "vc-next");
+            if (i === prev) c.classList.add("vc-prev");
+            else if (i === active) c.classList.add("vc-active");
+            else if (i === next) c.classList.add("vc-next");
+            else {
+              c.style.opacity = "0";
+              c.style.pointerEvents = "none";
+              c.style.transform = "translateY(0) scale(.9)";
+              c.style.zIndex = "0";
+            }
+          });
+
+      
+          [prev, active, next].forEach((i) => {
+            cards[i].style.opacity = "";
+            cards[i].style.pointerEvents = "";
+            cards[i].style.transform = "";
+            cards[i].style.zIndex = "";
+          });
+        }
+
+        function go(delta) {
+          if (locked) return;
+          locked = true;
+
+          active = mod(active + delta, cards.length);
+          applyClasses();
+
+          setTimeout(() => (locked = false), 240);
+        }
+
+        // init state
+        applyClasses();
+
+        // === SWIPE ONLY ===
+        let startY = 0;
+        let startX = 0;
+
+        stage.addEventListener(
+          "touchstart",
+          (e) => {
+            const t = e.touches[0];
+            startY = t.clientY;
+            startX = t.clientX;
+          },
+          { passive: true },
+        );
+
+        stage.addEventListener(
+          "touchmove",
+          (e) => {
+            e.preventDefault();
+          },
+          { passive: false },
+        );
+
+        stage.addEventListener(
+          "touchend",
+          (e) => {
+            const t = e.changedTouches[0];
+            const dy = t.clientY - startY;
+            const dx = t.clientX - startX;
+
+            if (Math.abs(dx) > Math.abs(dy)) return;
+
+            if (dy < -45) go(1);
+            if (dy > 45) go(-1);
+          },
+          { passive: true },
+        );
+      })();
+    </script>
+  </body>
+</html>
