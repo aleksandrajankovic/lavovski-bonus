@@ -1,9 +1,78 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-K4QFNR");
+    </script>
+    <!-- End Google Tag Manager -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lavovski Bonus - Meridian</title>
+    <title>Lavovski Bonus Dobrodošlice do 26.000 RSD | Meridianbet</title>
+
+    <meta
+      name="description"
+      content="Registruj se i preuzmi lavovski bonus dobrodošlice do 26.000 RSD! Poklon tiketi, kazino bonus, Early Payout i specijalne misije. Igraj odmah uz Meridianbet."
+    />
+
+    <meta
+      name="keywords"
+      content="meridianbet, bonus dobrodošlice, kazino bonus, sportsko klađenje, poklon tiket, online kladionica, bonus 26000 rsd"
+    />
+    <meta name="author" content="Meridianbet" />
+    <meta name="robots" content="index, follow" />
+
+    <meta name="theme-color" content="#23340a" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Meridianbet" />
+
+    <meta
+      property="og:title"
+      content="Lavovski Bonus Dobrodošlice do 26.000 RSD"
+    />
+
+    <meta
+      property="og:description"
+      content="Poklon tiketi, kazino bonus, Early Payout i specijalne misije. Aktiviraj nalog i preuzmi bonus odmah!"
+    />
+
+    <meta
+      property="og:image"
+      content="https://cloud.merbet.com/Preview-image/f2.jpg"
+    />
+
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <meta property="og:url" content="https://tvoj-domen.com/lavovski-bonus" />
+
+    <!-- ===== TWITTER / X ===== -->
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <meta
+      name="twitter:title"
+      content="Lavovski Bonus do 26.000 RSD | Meridianbet"
+    />
+
+    <meta
+      name="twitter:description"
+      content="Uzmi poklon tikete, kazino bonus i dodatne nagrade. Registruj se i igraj odmah!"
+    />
+
+    <meta
+      name="twitter:image"
+      content="https://cloud.merbet.com/Preview-image/f2.jpg"
+    />
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
       .gold-gradient {
@@ -45,24 +114,35 @@
         -webkit-text-fill-color: transparent;
         background-clip: text;
       }
+      .text-glow {
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.75);
+      }
+      .text-glow-strong {
+        text-shadow: 0 3px 14px rgba(0, 0, 0, 0.85);
+      }
       .hero {
         background: url("./images/main_img.png");
+        background-repeat: no-repeat;
         background-size: cover;
-        background-position: center;
+        background-position: 50% 35%;
       }
-      /* === Vertical Infinite Swiper (3 visible) === */
+
+      .page-wrap {
+        width: min(600px, 100%);
+        margin-inline: auto;
+      }
+      @media (min-width: 768px) {
+        .hero {
+          background-position: 50% 30%;
+        }
+      }
       .vc-stage {
         position: relative;
-
-        /* centriramo ali ostavimo više prostora gore */
         display: flex;
         align-items: center;
         justify-content: center;
-
-        /* KLJUČ: prostor gore/dole da prev/next imaju gde da vire */
         padding-top: 140px;
         padding-bottom: 140px;
-
         touch-action: pan-y;
         user-select: none;
       }
@@ -80,7 +160,6 @@
         will-change: transform;
       }
 
-      /* active pomerimo malko naniže da se prev vidi */
       .vc-active {
         transform: translateY(26px) scale(1);
         opacity: 1;
@@ -89,7 +168,6 @@
         pointer-events: auto;
       }
 
-      /* prev sad stvarno ulazi u kadar (manji translate) */
       .vc-prev {
         transform: translateY(-20%) scale(0.96);
         opacity: 0.55;
@@ -98,7 +176,6 @@
         pointer-events: none;
       }
 
-      /* next isto tako (simetrično) */
       .vc-next {
         transform: translateY(46%) scale(0.92);
         opacity: 0.55;
@@ -106,9 +183,18 @@
         z-index: 10;
         pointer-events: none;
       }
-
-      /* mali ekran */
+      .vc-stage {
+        cursor: grab;
+      }
+      .vc-stage:active {
+        cursor: grabbing;
+      }
       @media (max-width: 400px) {
+        .steps span {
+          font-size: 12px !important;
+        }
+      }
+      @media (max-width: 375px) {
         .vc-stage {
           padding-top: 120px;
           padding-bottom: 120px;
@@ -127,16 +213,13 @@
           opacity: 0.55;
         }
         .bonus {
-          height: 100px !important;
+          height: 140px !important;
         }
         .bonus-2 {
-          height: 70px !important;
+          height: 120px !important;
         }
         .cta {
-          height: 60px !important;
-        }
-        .steps span {
-          font-size: 12px !important;
+          height: 100px !important;
         }
       }
     </style>
@@ -144,46 +227,71 @@
   <body
     class="bg-gradient-to-b from-[#23340a] via-[#23340a] to-[#020200] text-white overflow-x-hidden"
   >
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-K4QFNR"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <section
-      class="hero flex flex-col justify-between h-[100dvh] pt-8 pb-6 px-4 overflow-hidden"
+      class="relative h-[100dvh] flex flex-col justify-between overflow-hidden"
     >
-      <div class="flex flex-col justify-center gap-2">
+      <!-- BACKGROUND IMAGE -->
+      <img
+        src="./images/main_img.png"
+        alt="Main background"
+        class="absolute inset-0 w-full h-full object-contain md:object-cover bg-gradient-to-b from-black via-[#111] to-[#23340a] -z-10"
+      />
+      <img
+        src="./images/f1.jpg"
+        alt="Main background"
+        class="absolute inset-0 w-full h-full object-cover object-[50%_55%] -z-10 md:block hidden"
+      />
+      <!-- TOP -->
+      <div class="pt-[30px] px-4 flex flex-col">
         <img
           class="h-10 md:h-12 lg:h-14 xl:h-16 w-auto object-contain"
           src="./images/meridianbet_logo_new_.png"
-          alt="Meridin Logo"
+          alt="Meridian Logo"
         />
 
         <img
-          class="h-[130px] w-auto object-contain bonus"
-          src="./images/txt01.png"
+          class="h-[200px] w-auto object-contain md:hidden bonus"
+          src="./images/t1.png"
           alt="Bonus"
         />
       </div>
-      <div class="flex flex-col gap-2 items-center">
+
+      <!-- BOTTOM -->
+      <div class="pb-6 px-4 flex flex-col gap-2 items-center">
         <img
-          class="h-[90px] w-auto object-contain bonus-2"
-          src="./images/txt04.png"
+          class="h-[150px] w-auto object-contain bonus-2 md:hidden"
+          src="./images/t2.png"
           alt="Lavovski Bonus"
         />
-        <a href="#" class="hover:scale-105">
+
+        <a href="#" class="hover:scale-105 transition">
           <img
-            class="h-[74px] w-auto object-contain cta"
-            src="./images/button_main.png"
+            class="w-auto object-contain cta drop-shadow-xl"
+            src="./images/bbb.png"
             alt="CTA"
           />
         </a>
       </div>
     </section>
 
-    <div class="px-4 py-6 space-y-4">
+    <div class="px-4 py-6 space-y-4 page-wrap">
       <!-- WRAPPER -->
       <div class="space-y-4 steps">
         <!-- ROW 01 -->
         <div class="flex items-stretch gap-3">
           <!-- LEFT TAG -->
           <div
-            class="min-w-[110px] px-6 py-5 flex items-center justify-center text-white font-black text-4xl bg-[#c69936] shadow-[0_12px_30px_rgba(0,0,0,0.25)]"
+            class="min-w-[110px] px-4 py-4 flex items-center justify-center pr-[23px] text-white font-black text-3xl bg-[#c69936] shadow-[0_12px_30px_rgba(0,0,0,0.25)]"
             style="
               clip-path: polygon(
                 0% 0%,
@@ -216,7 +324,7 @@
         <!-- ROW 02 -->
         <div class="flex items-stretch gap-3">
           <div
-            class="min-w-[110px] px-6 py-5 flex items-center justify-center text-white font-black text-4xl bg-[#7e870b] shadow-[0_12px_30px_rgba(0,0,0,0.25)]"
+            class="min-w-[110px] px-4 py-3 flex items-center justify-center pr-[23px] text-white font-black text-3xl bg-[#7e870b] shadow-[0_12px_30px_rgba(0,0,0,0.25)]"
             style="
               clip-path: polygon(
                 0% 0%,
@@ -248,7 +356,7 @@
         <!-- ROW 03 -->
         <div class="flex items-stretch gap-3">
           <div
-            class="min-w-[110px] px-6 py-5 flex items-center justify-center text-white font-black text-4xl bg-[#365800] shadow-[0_12px_30px_rgba(0,0,0,0.25)]"
+            class="min-w-[110px] px-4 py-3 flex items-center justify-center pr-[23px] text-white font-black text-3xl bg-[#365800] shadow-[0_12px_30px_rgba(0,0,0,0.25)]"
             style="
               clip-path: polygon(
                 0% 0%,
@@ -330,12 +438,13 @@
                     slavlje može da počne odmah.
                   </p>
 
-                  <button
+                  <a
+                    href="https://promo.meridianbet.rs/sr/category/44/page/25004"
                     class="bg-yellow-400 text-black font-black text-sm py-2 px-6 rounded-full hover:bg-yellow-300 transition-colors"
-                    type="button"
+                    target="_blank"
                   >
                     ODIGRAJ TIKET
-                  </button>
+                  </a>
                 </div>
               </div>
             </div>
@@ -358,12 +467,13 @@
                   hunske nagrade čekaju samo najspreм-<br />
                   nije.
                 </p>
-                <button
+                <a
                   class="bg-yellow-400 text-black font-black text-sm py-2 px-6 rounded-full hover:bg-yellow-300 transition-colors"
-                  type="button"
+                  href="https://meridianbet.rs/sr/kazino/premium-turniri"
+                  target="_blank"
                 >
                   PRIKLJUČI SE
-                </button>
+                </a>
               </div>
 
               <div
@@ -408,12 +518,13 @@
                     skupljaju. Svaki ulog te vodi korak<br />
                     bliže nagradama koje te čekaju.
                   </p>
-                  <button
+                  <a
                     class="bg-yellow-400 text-black font-black text-sm py-2 px-6 rounded-full hover:bg-yellow-300 transition-colors"
-                    type="button"
+                    href="https://promocija.meridianbet.rs/meridian-misije"
+                    target="_blank"
                   >
                     POKRENI MISIJU
-                  </button>
+                  </a>
                 </div>
               </div>
             </div>
@@ -428,7 +539,6 @@
         </p>
       </footer>
     </div>
-
     <script>
       (function () {
         const stage = document.getElementById("lionCarousel");
@@ -478,10 +588,10 @@
           setTimeout(() => (locked = false), 240);
         }
 
-        // init state
+        // init
         applyClasses();
 
-        // === SWIPE ONLY ===
+        // === MOBILE: SWIPE ===
         let startY = 0;
         let startX = 0;
 
@@ -517,6 +627,47 @@
           },
           { passive: true },
         );
+
+        // === DESKTOP: WHEEL ===
+        stage.addEventListener(
+          "wheel",
+          (e) => {
+            e.preventDefault();
+
+            if (e.deltaY > 0) go(1);
+            if (e.deltaY < 0) go(-1);
+          },
+          { passive: false },
+        );
+
+        // === DESKTOP: DRAG MOUSE ===
+        let isDown = false;
+        let mouseStartY = 0;
+
+        stage.addEventListener("mousedown", (e) => {
+          isDown = true;
+          mouseStartY = e.clientY;
+        });
+
+        window.addEventListener("mouseup", () => {
+          isDown = false;
+        });
+
+        stage.addEventListener("mousemove", (e) => {
+          if (!isDown) return;
+
+          const dy = e.clientY - mouseStartY;
+
+          if (dy < -50) {
+            go(1);
+            isDown = false;
+          }
+
+          if (dy > 50) {
+            go(-1);
+            isDown = false;
+          }
+        });
       })();
     </script>
   </body>
