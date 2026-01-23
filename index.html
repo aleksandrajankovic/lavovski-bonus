@@ -251,12 +251,13 @@
 
       <!-- TOP -->
       <div class="pt-[30px] px-4 flex flex-col">
-        <img
-          class="h-10 w-auto object-contain"
-          src="./images/meridianbet_logo_new_.png"
-          alt="Meridian Logo"
-        />
-
+        <a href="#" target="_blank" class="home flex justify-center">
+          <img
+            class="h-10 w-auto object-contain"
+            src="./images/meridianbet_logo_new_.png"
+            alt="Meridian Logo"
+          />
+        </a>
         <img
           class="h-[150px] w-auto object-contain bonus"
           src="./images/t1.png"
@@ -272,7 +273,7 @@
           alt="Lavovski Bonus"
         />
 
-        <a href="#" class="hover:scale-105 transition">
+        <a href="#" class="hover:scale-105 transition join-now">
           <img
             class="h-[90px] w-auto object-contain cta drop-shadow-xl"
             src="./images/bbb.png"
@@ -290,12 +291,13 @@
         alt="Background desktop"
         class="absolute inset-0 w-full h-full object-cover object-[50%_55%] -z-10"
       />
-
-      <img
-        src="./images/meridianbet_logo_new_.png"
-        alt="Meridian Logo"
-        class="absolute top-6 left-1/2 -translate-x-1/2 h-14 lg:h-16 xl:h-18 z-20 object-contain"
-      />
+      <a href="#" class="home">
+        <img
+          src="./images/meridianbet_logo_new_.png"
+          alt="Meridian Logo"
+          class="absolute top-6 left-1/2 -translate-x-1/2 h-14 lg:h-16 xl:h-18 z-20 object-contain"
+        />
+      </a>
       <!-- WRAPPER -->
       <div class="w-full max-w-[1800px] mx-auto px-10 lg:px-14 flex">
         <div class="w-[60%] flex flex-col justify-center items-center">
@@ -311,7 +313,10 @@
             class="w-[520px] max-w-full object-contain drop-shadow-2xl"
           />
 
-          <a href="#" class="inline-block w-fit hover:scale-105 transition">
+          <a
+            href="#"
+            class="inline-block w-fit hover:scale-105 transition join-now"
+          >
             <img
               src="./images/bbb.png"
               alt="Registruj se"
@@ -580,136 +585,28 @@
         </p>
       </footer>
     </div>
+    <script src="/main.js"></script>
     <script>
-      (function () {
-        const stage = document.getElementById("lionCarousel");
-        const root = document.getElementById("lionSlots");
-        const cards = Array.from(root.querySelectorAll("[data-card]"));
+      document.addEventListener("DOMContentLoaded", () => {
+        const query = window.location.search || "";
 
-        if (!stage || !root || cards.length < 3) return;
+        const baseRegistracija = "https://meridianbet.rs/sr/registracija";
+        const baseKladjenje = "https://meridianbet.rs/sr/kladjenje";
 
-        let active = 0;
-        let locked = false;
+        const registracijaHref = baseRegistracija + query;
+        const kladjenjeHref = baseKladjenje + query;
 
-        const mod = (i, n) => ((i % n) + n) % n;
-
-        function applyClasses() {
-          const n = cards.length;
-          const prev = mod(active - 1, n);
-          const next = mod(active + 1, n);
-
-          cards.forEach((c, i) => {
-            c.classList.remove("vc-prev", "vc-active", "vc-next");
-            if (i === prev) c.classList.add("vc-prev");
-            else if (i === active) c.classList.add("vc-active");
-            else if (i === next) c.classList.add("vc-next");
-            else {
-              c.style.opacity = "0";
-              c.style.pointerEvents = "none";
-              c.style.transform = "translateY(0) scale(.9)";
-              c.style.zIndex = "0";
-            }
-          });
-
-          [prev, active, next].forEach((i) => {
-            cards[i].style.opacity = "";
-            cards[i].style.pointerEvents = "";
-            cards[i].style.transform = "";
-            cards[i].style.zIndex = "";
-          });
-        }
-
-        function go(delta) {
-          if (locked) return;
-          locked = true;
-
-          active = mod(active + delta, cards.length);
-          applyClasses();
-
-          setTimeout(() => (locked = false), 240);
-        }
-
-        // init
-        applyClasses();
-
-        // === MOBILE: SWIPE ===
-        let startY = 0;
-        let startX = 0;
-
-        stage.addEventListener(
-          "touchstart",
-          (e) => {
-            const t = e.touches[0];
-            startY = t.clientY;
-            startX = t.clientX;
-          },
-          { passive: true },
-        );
-
-        stage.addEventListener(
-          "touchmove",
-          (e) => {
-            e.preventDefault();
-          },
-          { passive: false },
-        );
-
-        stage.addEventListener(
-          "touchend",
-          (e) => {
-            const t = e.changedTouches[0];
-            const dy = t.clientY - startY;
-            const dx = t.clientX - startX;
-
-            if (Math.abs(dx) > Math.abs(dy)) return;
-
-            if (dy < -45) go(1);
-            if (dy > 45) go(-1);
-          },
-          { passive: true },
-        );
-
-        // === DESKTOP: WHEEL ===
-        stage.addEventListener(
-          "wheel",
-          (e) => {
-            e.preventDefault();
-
-            if (e.deltaY > 0) go(1);
-            if (e.deltaY < 0) go(-1);
-          },
-          { passive: false },
-        );
-
-        // === DESKTOP: DRAG MOUSE ===
-        let isDown = false;
-        let mouseStartY = 0;
-
-        stage.addEventListener("mousedown", (e) => {
-          isDown = true;
-          mouseStartY = e.clientY;
+        document.querySelectorAll(".join-now").forEach((a) => {
+          a.setAttribute("href", registracijaHref);
         });
 
-        window.addEventListener("mouseup", () => {
-          isDown = false;
+        document.querySelectorAll(".home").forEach((a) => {
+          a.setAttribute("href", kladjenjeHref);
         });
 
-        stage.addEventListener("mousemove", (e) => {
-          if (!isDown) return;
-
-          const dy = e.clientY - mouseStartY;
-
-          if (dy < -50) {
-            go(1);
-            isDown = false;
-          }
-
-          if (dy > 50) {
-            go(-1);
-            isDown = false;
-          }
-        });
-      })();
+        console.log("join‑now", registracijaHref);
+        console.log("home ", kladjenjeHref);
+      });
     </script>
   </body>
 </html>
